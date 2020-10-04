@@ -13,33 +13,38 @@
     }
 
     function printNumberPerType (map,id) {
+        let str = '';
         for (let [key, value] of map.entries()) {
-            document.getElementById(id).innerHTML +=
-                "<br> "+key +"&nbsp => &nbsp"+ value.length;
+            str += "<br> "+key +"&nbsp => &nbsp"+ value.length;
         }
+        document.getElementById(id).innerHTML += str;
     }
 
     function printCarWithMoreCategory (map,id) {
+        let str = '';
         for (let [key, value] of map.entries()) {
             if(value.length > 1) {
-                document.getElementById(id).innerHTML +=
+                str +=
                     "<br> "+key +"&nbsp => &nbsp"+ value.length;
             }
         }
+        document.getElementById(id).innerHTML += str;
     }
 
     function printArrayOfObject (arrayOfObject,id) {
+        let str = '';
         for(let obj in arrayOfObject) {
-            document.getElementById(id).innerHTML +=
-                "<br>"+JSON.stringify(arrayOfObject[obj]);
+            str +="<br>"+JSON.stringify(arrayOfObject[obj]);
         }
+        document.getElementById(id).innerHTML += str;
     }
 
     function printObject(modelPerMakeObject,id) {
+        let str = '';
         for(let obj in modelPerMakeObject) {
-            document.getElementById(id).innerHTML +=
-                "<br>"+JSON.stringify(obj)+' => '+modelPerMakeObject[obj];
+            str +="<br>"+JSON.stringify(obj)+' => '+modelPerMakeObject[obj];
         }
+        document.getElementById(id).innerHTML += str;
     }
 
     function getYearMakeModelCategoryArrayObject (yearMakeModelCategoryMap,yearMakeModelObjectMap) {
