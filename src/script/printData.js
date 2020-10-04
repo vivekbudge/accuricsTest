@@ -24,8 +24,7 @@
         let str = '';
         for (let [key, value] of map.entries()) {
             if(value.length > 1) {
-                str +=
-                    "<br> "+key +"&nbsp => &nbsp"+ value.length;
+                str +="<br> "+key +"&nbsp => &nbsp"+ value.length;
             }
         }
         document.getElementById(id).innerHTML += str;
