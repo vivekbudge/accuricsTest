@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accurics Test</title>
+    <script src="../script/data.js"></script>
+    <script src="../script/printData.js"></script>
+    <script src="../script/groupBarChart.js"></script>
+    <script src="../script/processData.js"></script>
+    <script src="../script/showTable.js"></script>
+    <script src="../script/sunBurstChart.js"></script>
+    <script src="../libraries/highcharts.js"></script>
+    <script src="../libraries/sunburst.js"></script>
+    <style>
+        table, td,th {
+        border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="printData">
+        <div id ="printCount">
+            <h2>1) Print following data</h2>
+            <div id = "printCarPerYear">
+                <h4>i) Unique number of car per year</h4>
+            </div>
+            <div id = "printCarPerCategory">
+                <h4>ii) Unique Number of car per Category</h4>
+            </div>
+            <div id = "printCarPerMake">
+                <h4>iii) Unique number of car per Make</h4>
+            </div>
+            <div id = "printCarWithMoreCategory">
+                <h4>iv) Number of car having more than one category </h4>
+            </div>
+        </div>
+        <hr>
+        <div id ="printArray">
+            <h2>2) Print year-make-model-category </h2>
+        </div>
+        <hr>
+        <div id ="printObject">
+            <h2>3) Print json output where keys will be the Make of the car and
+                values will be the array of all the car Models </h2>
+        </div>
+    </div>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    <div id="groupBarChart" style="width:100%; height:400px;"></div>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    <div id="sunBurstChart"></div>
+
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    <div align="center" id="makeModelCatTableDiv">
+        <h2>Table with Columns: S. No. , Make, Model, Category</h2>
+        <input id="searchBox" type="text" placeholder="Search.." name="search">
+        <button onclick="showSearchTableResult()">Submit</button>
+        <table id="makeModelCatTableId">
+            <tr>
+                <th>S.No.</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Category</th>
+            </tr>
+        </table>
+    </div>
+    <script src="../script/display.js"></script>
+</body>
+</html>
