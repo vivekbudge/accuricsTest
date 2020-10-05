@@ -4,8 +4,11 @@
     }
 
     function showFilteredTable(table,tableRows,filterString){
-        deleteAllRows(table);
-        generateTable(table, tableRows,filterString.toUpperCase());
+        deleteAllRows(table).
+            then(function(){
+                generateTable(table, tableRows,filterString.toUpperCase());
+            }).catch(function(){
+            });
     }
 
     function generateTable(table, tableRows,filterString) {
@@ -42,9 +45,12 @@
     }
 
     function deleteAllRows(table) {
-        let l = table.rows.length;
-        for(let i =1 ;i<l;i++){
-            // at 0 table header so starting from 1
-            table.deleteRow(1);
-        }
+        return new Promise(function(resolve, reject){
+            let l = table.rows.length;
+            for(let i =1 ;i<l;i++){
+                // at 0 table header so starting from 1
+                table.deleteRow(1);
+            }
+            resolve();
+        });
     }
